@@ -1,0 +1,16 @@
+h1 a {
+    color: #FCA205;
+}
+body {
+    padding-left: 30px;
+}
+caption {
+    caption-side: top;
+}
+.left-menu {
+    float: left;
+    width: 20%;
+}
+.page-footer {
+    text-align: center;
+}

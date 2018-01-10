@@ -1,0 +1,30 @@
+{% extends 'coin/index.html' %}
+{%  block content %}
+    <table border cellpadding="5" width=80%>
+    <caption><h2>New coins table</h2></caption>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Price</th>
+    </tr>
+    {%  for coin in new_coins_list %}
+        <div class="coins_tbl">
+            <tr>
+            <td>
+                <a href="/detail/{{coin.coin}}">{{ coin.coin }}</a>
+            </td>
+            <td>
+                {{ coin.name }}
+            </td>
+            <td align="center">
+                {{ coin.datePrice }}
+            </td>
+            <td ALIGN="right" WIDTH=200>
+                <a href="/edit/{{coin.coin}}">{{ coin.currentPrice }}</a>
+            </td>
+            </tr>
+        </div>
+    {% endfor %}
+    </table>
+{%  endblock %}

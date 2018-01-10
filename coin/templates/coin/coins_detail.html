@@ -1,0 +1,21 @@
+{% extends 'coin/index.html' %}
+{%  block content %}
+{#    {%  for coin in coins %}#}
+        <div class="coins_detail">
+            <tr>
+            <td>
+                {{ coins.coin }}
+            </td>
+            <td>
+                {{ coins.name }}
+            </td>
+            <td>
+                {{ coins.datePrice }}
+            </td>
+            <td ALIGN="right" WIDTH=200>
+                {{ coins.currentPrice }}
+            </td>
+            </tr>
+        </div>
+{#    {% endfor %}#}
+{%  endblock %}
