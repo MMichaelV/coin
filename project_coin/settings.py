@@ -84,8 +84,8 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'coin',
-#         'USER': 'user_for_coin',
-#         'PASSWORD': 'mikkimouse',
+#         'USER': 'user',
+#         'PASSWORD': 'password',
 #         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
@@ -94,6 +94,11 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+LOGIN_REDIRECT_URL = 'index'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

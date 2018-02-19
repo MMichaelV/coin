@@ -1,6 +1,6 @@
 {% extends 'coin/index.html' %}
 {%  block content %}
-    <table border cellpadding="5" width=80%>
+    <table border cellpadding="5" width=100%>
     <caption><h2>New coins table</h2></caption>
     <tr>
         <th>Code</th>
@@ -20,7 +20,7 @@
             <td align="center">
                 {{ coin.datePrice }}
             </td>
-            <td ALIGN="right" WIDTH=200>
+            <td align='right'>
                 <a href="/edit/{{coin.coin}}">{{ coin.currentPrice }}</a>
             </td>
             </tr>

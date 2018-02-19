@@ -2,7 +2,10 @@
 {%  block content %}
     <form action="{% url 'update_list' %}" method="post">
         {% csrf_token %}
-        <input type="submit" value="Update" />
+{#        <input type="submit" value="Update" />#}
+        <div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
     </form>
     <table border cellpadding="5" width=100%>
     <caption><h2>Coins table</h2></caption>
@@ -13,39 +16,35 @@
         <th>Date</th>
         <th>Price</th>
     </tr>
-    {% if is_paginated %}
-        {%  for coin in page_obj %}
-            <div class="coins_tbl">
-                <tr>
-                <td>
-                    {{ forloop.counter0|add:page_obj.start_index }}
-                </td>
-                <td>
-                    <a href="/detail/{{coin.coin}}">{{ coin.coin }}</a>
-                </td>
-                <td>
-                    {{ coin.name }}
-                </td>
-                <td align="center">
-                    {{ coin.datePrice }}
-                </td>
-                <td ALIGN="right">
-                    {{ coin.currentPrice }}
-                </td>
-                </tr>
-            </div>
-        {% endfor %}
-        </table>
-        {% if page_obj.paginator.num_pages > 1 %}
-            {% if page_obj.has_previous %}
-                <a href="/?page={{ page_obj.previous_page_number }}">&larr;</a>
-            {% endif %}
-            <span class="current page">{{ page_obj.number }}</span>
-            {% if page_obj.has_next %}
-                <a href="/?page={{ page_obj.next_page_number }}">&rarr;</a>
-            {% endif %}
+    {%  for coin in page_obj %}
+        <div class="coins_tbl">
+            <tr>
+            <td>
+                {{ forloop.counter0|add:page_obj.start_index }}
+            </td>
+            <td>
+                <a href="/detail/{{coin.coin}}">{{ coin.coin }}</a>
+            </td>
+            <td>
+                {{ coin.name }}
+            </td>
+            <td align="center">
+                {{ coin.datePrice }}
+            </td>
+            <td ALIGN="right">
+                {{ coin.currentPrice }}
+            </td>
+            </tr>
+        </div>
+    {% endfor %}
+    </table>
+    {% if page_obj.paginator.num_pages > 1 %}
+        {% if page_obj.has_previous %}
+            <a href="/?page={{ page_obj.previous_page_number }}">&larr;</a>
         {% endif %}
-    {% else %}
-        <h1>No list for paginated view</h1>
+        <span class="current page">{{ page_obj.number }}</span>
+        {% if page_obj.has_next %}
+            <a href="/?page={{ page_obj.next_page_number }}">&rarr;</a>
+        {% endif %}
     {% endif %}
 {%  endblock %}

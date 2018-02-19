@@ -12,5 +12,10 @@ caption {
     width: 20%;
 }
 .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
     text-align: center;
 }
